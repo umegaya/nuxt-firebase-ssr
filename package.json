@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-firebase-ssr-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "HOST=0.0.0.0 nuxt",
+    "build": "nuxt build && npm run build:copy:ssr",
+    "build:copy:ssr": "rimraf functions/ssr && mkdirp functions/ssr && cp -R .nuxt/dist functions/ssr/dist",
+    "serve": "firebase serve",
+    "deploy": "firebase deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nuxt": "^1.4.2"
+  },
+  "devDependencies": {
+    "firebase-tools": "^4.0.3",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2"
+  }
+}
